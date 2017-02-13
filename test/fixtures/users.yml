@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  First: MyString
+  Last: MyString
+  Street: MyString
+  City: MyString
+  Country: MyString
+  DL: MyString
+
+two:
+  First: MyString
+  Last: MyString
+  Street: MyString
+  City: MyString
+  Country: MyString
+  DL: MyString
