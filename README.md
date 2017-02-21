@@ -1,3 +1,5 @@
+apple
+kiwi
 # Frontier Car Rental
 
 This is a ruby on rails project created in Spring 2017 for a class at SJSU.
