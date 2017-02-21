@@ -1,0 +1,17 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a{
+	font-size: 18px;
+}
+
+ul#bkgnd
+{
+    margin: 0 auto;
+    background-image: url(/assets/hero.jpg);
+    background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 1000px;
+}
