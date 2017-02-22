@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <%= stylesheet_link_tag "welcome" if controller_name == "welcome" %>
     <title>Frontier</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag "application" %>
+	<%= javascript_include_tag "application" %>
+    
   </head>
 
   <body>
