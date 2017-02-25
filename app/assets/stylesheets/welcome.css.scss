@@ -19,10 +19,14 @@ h1{
 	font-size: 56px;
 	font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
 	line-height: 40px;
-	margin-top: -1000px;
+	margin-top: -800px;
 	position: relative;
 	color: white; 
 	z-index: 1;
+}
+
+.wrapper{
+	text-align: center;
 }
 
 input[type=text] {
