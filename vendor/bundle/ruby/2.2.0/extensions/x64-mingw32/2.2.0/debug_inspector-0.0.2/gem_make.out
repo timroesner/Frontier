@@ -1,0 +1,16 @@
+current directory: C:/Users/emily/Dropbox/Frontier/vendor/bundle/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+C:/Ruby22-x64/bin/ruby.exe -r ./siteconf20170221-4296-1aszx1a.rb extconf.rb 
+creating Makefile
+
+current directory: C:/Users/emily/Dropbox/Frontier/vendor/bundle/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: C:/Users/emily/Dropbox/Frontier/vendor/bundle/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR="
+generating debug_inspector-x64-mingw32.def
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: C:/Users/emily/Dropbox/Frontier/vendor/bundle/ruby/2.2.0/gems/debug_inspector-0.0.2/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20170221-4296-bkv9p2
