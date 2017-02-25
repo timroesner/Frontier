@@ -26,7 +26,8 @@
 
 body {
     font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
     color: #000;
     background: #fff;
 }
@@ -50,6 +51,7 @@ body {
 }
 
 a.nav:hover {
+	text-decoration: none;
 	color: #007AFF;
 }
 
