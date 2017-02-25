@@ -6,10 +6,9 @@ a{
 	font-size: 18px;
 }
 
-ul#hero
-{
-    background-image: url(/assets/hero.jpg);
+img.hero {
+	margin-top: 2%;
 	z-index: 0;
-	position: absolute;
+	position: relative;
 	width: 100%;
 }

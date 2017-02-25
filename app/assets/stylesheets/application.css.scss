@@ -14,10 +14,43 @@
  *= require_tree .
  */
 
+.header {
+	padding-bottom: 1em;
+	padding-top: 1em;
+	text-align: center;
+	width: 100%;
+	z-index: 2;
+	position: fixed;
+	background-color: white;
+}
+
+.nav {
+    margin-left: 3%;
+    font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: 18px;
+    margin-right: 3%;
+	text-decoration: none;
+	color: black;
+}
+
+.active {
+	margin-left: 3%;
+	font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+	margin-right: 3%;
+	font-size: 18px;
+	text-decoration: none;
+	color: #007AFF;
+}
+
+a.nav:hover {
+	color: #007AFF;
+}
+
 h1{
 	font-size: 36px;
 	font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
 	line-height: 40px;
+	margin-top: -100px;
 	color: white; 
 }
 
