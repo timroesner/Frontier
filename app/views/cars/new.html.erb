@@ -1,5 +1,12 @@
+<body>
+<div class="header">
+<a class="nav" align="right" href="/index">Home</a>
+<a class="nav" align="left" href="/users/new">Register</a>
+<a class="active" align="left" href="/cars/new">List your Car</a>
+</div>
 <h1>New Car</h1>
 
 <%= render 'form', car: @car %>
 
 <%= link_to 'Back', cars_path %>
+</body>
