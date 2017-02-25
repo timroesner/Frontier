@@ -6,10 +6,10 @@ a{
 	font-size: 18px;
 }
 
-ul#bkgnd
+ul#hero
 {
     background-image: url(/assets/hero.jpg);
 	z-index: 0;
-	position: relative;
+	position: absolute;
 	width: 100%;
-	}
+}

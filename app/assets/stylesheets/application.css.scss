@@ -16,19 +16,11 @@
 
 h1{
 	font-size: 36px;
-	font: Arial;
+	font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
 	line-height: 40px;
+	color: white; 
 }
 
  a{
  	font-size: 18px;
  }
- 
-ul#bkgnd
-{
-    margin: 0 auto;
-    background-image: url(/assets/hero.jpg);
-    background-repeat: no-repeat;
-	background-size: contain;
-	height: 1000px;
-}
