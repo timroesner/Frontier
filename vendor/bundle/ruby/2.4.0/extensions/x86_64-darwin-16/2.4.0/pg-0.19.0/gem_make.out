@@ -1,5 +1,5 @@
 current directory: /Users/Tim/Dropbox/Developer/Ruby/Frontier/vendor/bundle/ruby/2.4.0/gems/pg-0.19.0/ext
-/usr/local/opt/ruby/bin/ruby -r ./siteconf20170221-20500-1q89u1f.rb extconf.rb 
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20170226-4331-bdtqqk.rb extconf.rb 
 checking for pg_config... no
 No pg_config... trying anyway. If building fails, please try again with
  --with-pg-config=/path/to/pg_config
