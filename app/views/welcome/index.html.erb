@@ -58,7 +58,10 @@ input[type=text] {
 <img class="hero" src="/assets/hero.jpg" alt="Hero">
 <h1 align="center">Where are you going next?</h1>
 <div class="wrapper">
+<form method="post" action="/search" id="search">
 <input type="text" name="location" placeholder="Destination, city, address" autocomplete="off" id="search-location" value="">
+<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+</form>
 </div>
 </body>
 

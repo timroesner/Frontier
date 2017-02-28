@@ -16,12 +16,6 @@
 /*@import "bootstrap-sprockets";
 *@import "bootstrap";
 */
-@import url(cars.scss);
-@import url(footer.scss);
-@import url(scaffolds.scss);
-@import url(users.scss);
-@import url(users.scss);
-@import url(welcome.scss);
 
 .header {
 	padding-bottom: 1em;
@@ -39,6 +33,15 @@ body {
     padding: 0px;
     color: #000;
     background: #fff;
+}
+
+hr.header-line {
+    border: 0;
+    height: 1px;
+    margin-bottom: 0;
+    margin-top:.75em;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
 .nav {
