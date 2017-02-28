@@ -16,6 +16,13 @@
 /*@import "bootstrap-sprockets";
 *@import "bootstrap";
 */
+@import url(cars.scss);
+@import url(footer.scss);
+@import url(scaffolds.scss);
+@import url(users.scss);
+@import url(users.scss);
+@import url(welcome.scss);
+
 .header {
 	padding-bottom: 1em;
 	padding-top: 1em;
@@ -64,3 +71,4 @@ a.nav:hover {
  .wrapper{
 	text-align: center;
 }
+
