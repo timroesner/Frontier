@@ -5,6 +5,16 @@ a{
 	font-size: 18px;
 }
 
+.header {
+	padding-bottom: 1em;
+	padding-top: 1em;
+	text-align: center;
+	width: 100%;
+	z-index: 2;
+	position: fixed;
+	background-color: white;
+}
+
 img.hero {
 	margin-top: 2%;
 	margin-left: 0px;
@@ -58,7 +68,7 @@ input[type=text] {
 <img class="hero" src="/assets/hero.jpg" alt="Hero">
 <h1 align="center">Where are you going next?</h1>
 <div class="wrapper">
-<form method="post" action="/search" id="search">
+<form action="/search">
 <input type="text" name="location" placeholder="Destination, city, address" autocomplete="off" id="search-location" value="">
 <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
 </form>
