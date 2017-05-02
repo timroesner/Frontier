@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @car.model %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @car.make %>
+</p>
+
+<p>
+  <strong>Door:</strong>
+  <%= @car.door %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @car.year %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @car.price %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @car.location %>
+</p>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

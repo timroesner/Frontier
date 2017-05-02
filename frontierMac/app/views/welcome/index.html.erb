@@ -1,0 +1,36 @@
+<head>
+	<link href="application.scss" type="text/css" />
+	<style>
+
+
+img.hero {
+	margin-top: 2%;
+	margin-left: 0px;
+	margin-right: 0px;
+	z-index: 0;
+	position: relative;
+	width: 100%;
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="header">
+<a class="active" href="/">Home</a>
+<a class="nav" href="/search">Search</a>
+<a class="nav" href="/users/sign_up">Register</a>
+<a class="nav" href="/users/sign_in">Log In</a>
+<hr class="header-line">
+</div>
+<img class="hero" src="/assets/hero.JPG" alt="Hero">
+<h1 align="center">Where are you going next?</h1>
+<div class="wrapper">
+<form action="/search">
+<input type="text" name="location" placeholder="Destination, city, address" autocomplete="off" id="search-location" value="">
+<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+</form>
+</div>
+</body>
+

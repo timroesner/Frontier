@@ -1,0 +1,162 @@
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+th {
+  padding-bottom: 5px;
+}
+
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+  &.layout{
+    margin-top: 2%;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+
+  h1{
+  font-size: 56px;
+  font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+  line-height: 40px;
+  margin-top: -55%;
+  position: relative;
+  color: white; 
+  text-shadow: 2px 2px 8px grey;
+  z-index: 1;
+  }
+
+  h2 {
+    margin-top: 200px;
+    margin-left: 0px;
+    margin-right: 0px;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+  }
+
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+.header {
+  padding-bottom: 0;
+  padding-top: 1em;
+  text-align: center;
+  width: 100%;
+  z-index: 2;
+  position: fixed;
+  background-color: white;
+}
+
+body {
+    font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #000;
+    background: #fff;
+}
+
+hr.header-line {
+    border: 0;
+    height: 1px;
+    margin-bottom: 0;
+    margin-top:.75em;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.nav {
+    margin-left: 3%;
+    font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    font-size: 18px;
+    margin-right: 3%;
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  margin-left: 3%;
+  font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+  margin-right: 3%;
+  font-size: 18px;
+  text-decoration: none;
+  color: #007AFF;
+}
+
+a.nav:hover {
+  text-decoration: none;
+  color: #007AFF;
+}
+
+ a{
+  font-size: 18px;
+ }
+
+ .wrapper{
+  text-align: center;
+}
+
+input[type=text] {
+    padding-left: 20px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-top: 5px;
+    margin-left: 0;
+    margin-bottom: 27px;
+    margin-right: 0;
+    margin-top: 5px;
+    width: 50%;
+    font-size: 100%;
+    font-family: avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+      display: inline-block;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 1;
+      
+}
+
+label {
+  display: block;
+}
