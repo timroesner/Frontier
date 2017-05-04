@@ -1,2 +1,21 @@
-<h1>Search#index</h1>
-<p>Find me in app/views/search/index.html.erb</p>
+<body>
+<div class="header">
+<a class="nav" href="/">Home</a>
+<a class="active" href="/search">Search</a>
+<% if user_signed_in? %>
+	<%= link_to('Profile', edit_user_registration_path, class: "nav") %>
+	<%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "nav") %>      
+<% else %>
+	<%= link_to('Register', new_user_registration_path, class: "nav") %>
+	<%= link_to('Log In', new_user_session_path, class: "nav")%> 
+<% end %>
+<hr class="header-line">
+</div>
+<div class="layout">
+<% if user_signed_in? %>
+  <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %>        
+<% else %>
+  <%= link_to('Log In', new_user_session_path)  %>  
+<% end %>
+</div>
+</body>

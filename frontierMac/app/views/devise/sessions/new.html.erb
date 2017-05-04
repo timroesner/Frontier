@@ -1,26 +1,41 @@
-<h2>Log in</h2>
+<body>
+<div class="header">
+<a class="nav" href="/">Home</a>
+<a class="nav" href="/search">Search</a>
+<% if user_signed_in? %>
+  <%= link_to('Profile', edit_user_registration_path, class: "nav") %>
+  <%= link_to 'List Car', new_car_path, class: "nav"%>
+  <%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "nav") %>      
+<% else %>
+  <%= link_to('Register', new_user_registration_path, class: "active") %>
+  <%= link_to('Log In', new_user_session_path, class: "nav")%> 
+<% end %>
+<hr class="header-line">
+</div>
+<div class="layout">
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password %>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
+      <p><%= f.check_box :remember_me %>  Remember me</p>
   <% end -%>
+
+
 
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= link_to "Forgot your password?", new_password_path(resource_name) %>
+</div>
+</body>

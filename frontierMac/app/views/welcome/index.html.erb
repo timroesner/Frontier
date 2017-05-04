@@ -12,6 +12,17 @@ img.hero {
 	width: 100%;
 }
 
+ h1{
+    font-size: 56px;
+    font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    line-height: 40px;
+    margin-top: -55%;
+    position: relative;
+    color: white; 
+    text-shadow: 2px 2px 8px grey;
+    z-index: 1;
+  }
+
 
 </style>
 </head>
@@ -20,8 +31,14 @@ img.hero {
 <div class="header">
 <a class="active" href="/">Home</a>
 <a class="nav" href="/search">Search</a>
-<a class="nav" href="/users/sign_up">Register</a>
-<a class="nav" href="/users/sign_in">Log In</a>
+<% if user_signed_in? %>
+	<%= link_to('Profile', edit_user_registration_path, class: "nav") %>
+	<%= link_to 'List Car', new_car_path, class: "nav"%>
+	<%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "nav") %>      
+<% else %>
+	<%= link_to('Register', new_user_registration_path, class: "nav") %>
+	<%= link_to('Log In', new_user_session_path, class: "nav")%> 
+<% end %>
 <hr class="header-line">
 </div>
 <img class="hero" src="/assets/hero.JPG" alt="Hero">
