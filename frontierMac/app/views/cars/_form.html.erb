@@ -1,3 +1,4 @@
+<div class="layout">
 <%= form_for(car) do |f| %>
   <% if car.errors.any? %>
     <div id="error_explanation">
@@ -32,7 +33,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :price %>
+    <%= f.label :price, "Price (in $)" %>
     <%= f.text_field :price %>
   </div>
 
@@ -45,3 +46,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+</div>

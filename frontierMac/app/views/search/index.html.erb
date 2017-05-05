@@ -1,9 +1,17 @@
+<head>
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
+    <style type="text/css">
+    	#map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
 <body>
 <div class="header">
 <a class="nav" href="/">Home</a>
 <a class="active" href="/search">Search</a>
 <% if user_signed_in? %>
 	<%= link_to('Profile', edit_user_registration_path, class: "nav") %>
+	<%= link_to 'List Car', new_car_path, class: "nav"%>
 	<%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "nav") %>      
 <% else %>
 	<%= link_to('Register', new_user_registration_path, class: "nav") %>
@@ -11,11 +19,84 @@
 <% end %>
 <hr class="header-line">
 </div>
-<div class="layout">
-<% if user_signed_in? %>
-  <%= link_to('Log Out', destroy_user_session_path, :method => :delete) %>        
-<% else %>
-  <%= link_to('Log In', new_user_session_path)  %>  
-<% end %>
+<div id='map'></div>
+
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoidGltcm9lc25lciIsImEiOiJjajJhbzEzZ2QwMDkwMzNvZ2YxZnVsbXI2In0.Dq8bsIZh_GP75xpawX3fcA';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v10',
+    center: [-121.88171, 37.3359], // starting position
+    zoom: 13 // starting zoom
+});
+
+map.on('load', function() {
+    map.addLayer({
+        'id': "cars",
+        'type': "circle",
+        'source': {
+            "type": "geojson",
+            	"data": {
+                "type": "FeatureCollection",
+                "features": [{
+                 "type": "Feature",
+                 "properties": {},
+                 "geometry": {
+                 "coordinates": [
+                                 -122.045602,
+                                 37.340118
+                                 ],
+                 "type": "Point"
+                 },
+                 "id": "04a2d925f72c4a4f4ff05f11f085dc0c"
+                 },
+                 {
+                 "type": "Feature",
+                 "properties": {},
+                 "geometry": {
+                 "coordinates": [
+                                 -121.886473,
+                                 37.34421
+                                 ],
+                 "type": "Point"
+                 },
+                 "id": "0a83242b24e0a284221167abf8cf5b2e"
+                 },
+                 {
+                 "type": "Feature",
+                 "properties": {},
+                 "geometry": {
+                 "coordinates": [
+                                 -122.003573,
+                                 37.308815
+                                 ],
+                 "type": "Point"
+                 },
+                 "id": "0a9728317f29ac3a6fbf6ad187f226fc"
+                 },
+                {
+                    "type": "Feature",
+                    "geometry": {
+                        "type": "Point",
+                        "coordinates": [
+                                 -121.876386,
+                                 37.330684
+                                 ]
+
+                    },
+                    "properties": {}
+                }]
+            }	
+        },
+        'layout': {
+            'visibility': 'visible'
+        },
+        'paint': {
+            'circle-radius': 8,
+            'circle-color': 'rgba(0,123,255,1)'
+        },
+    });
+});
+</script>
 </div>
 </body>
