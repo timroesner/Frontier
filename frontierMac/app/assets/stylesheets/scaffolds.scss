@@ -170,6 +170,26 @@ a.link:visited{
   text-decoration: none;
 }
 
+.imgnav{
+  width: 25px;
+  height: 25px;
+  margin-bottom: -7px;
+  margin-right: -2px;
+  -webkit-filter: grayscale(100%) saturate(100%);
+  filter: grayscale(100%) saturate(100%);
+}
+
+.imgnavAct{
+  width: 25px;
+  height: 25px;
+  margin-bottom: -7px;
+  margin-right: -2px;
+}
+
+.imgnav:hover {
+  -webkit-filter: grayscale(0%) saturate(100%);
+  filter: grayscale(0%) saturate(100%);
+}
  .wrapper{
   text-align: center;
 }

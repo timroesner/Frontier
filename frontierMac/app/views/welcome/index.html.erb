@@ -12,6 +12,27 @@ img.hero {
 	width: 100%;
 }
 
+input[type=text] {
+		padding-left: 20px;
+		padding-bottom: 5px;
+		padding-right: 20px;
+		padding-top: 5px;
+		margin-left: 0;
+		margin-bottom: 27px;
+		margin-right: 0;
+		margin-top: 5px;
+		width: 50%;
+		font-size: 100%;
+		font-family: avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    	display: inline-block;
+    	border: 2px solid #ccc;
+    	border-radius: 5px;
+    	box-sizing: border-box;
+    	position: relative;
+    	z-index: 1;
+    	
+}
+
  h1{
     font-size: 56px;
     font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
@@ -29,8 +50,7 @@ img.hero {
 
 <body>
 <div class="header">
-<a class="active" href="/">Home</a>
-<a class="nav" href="/search">Search</a>
+<a class="active" href="/"><img class="imgnavAct" src="/assets/frontierAlt.svg"></a>
 <% if user_signed_in? %>
 	<%= link_to('Profile', edit_user_registration_path, class: "nav") %>
 	<%= link_to 'List Car', new_car_path, class: "nav"%>

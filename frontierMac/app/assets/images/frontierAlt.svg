@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Custom_Size_1);
+      }
+
+      .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-2 {
+        stroke: #007aff;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+    </style>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" class="cls-1">
+    <rect class="cls-3" width="50" height="50"/>
+    <g id="Ellipse_1" data-name="Ellipse 1" class="cls-2" transform="translate(5.05 -2.459) rotate(9)">
+      <circle class="cls-4" cx="24" cy="24" r="24"/>
+      <circle class="cls-5" cx="24" cy="24" r="23"/>
+    </g>
+    <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-3" width="16" height="5" transform="translate(16.324 1.015) rotate(-2)"/>
+    <rect id="Rectangle_2" data-name="Rectangle 2" class="cls-3" width="20" height="7" transform="translate(15.433 43.438) rotate(-6)"/>
+    <path id="Path_1" data-name="Path 1" class="cls-2" d="M27.642,2.486a11.545,11.545,0,0,0-8.677.912,7.213,7.213,0,0,0-4.076,6.42C14.71,16.2,24.135,26,24.135,26s10.45,9.437,7.517,15.575c-.585,1.423-3.2,4.151-6.281,5.359-3.213,1.263-7.346.51-8.8.17" transform="translate(6.194 -3.29) rotate(9)"/>
+    <path id="Path_2" data-name="Path 2" class="cls-2" d="M15.474,25.578s.261-1.856,4.879-1.856c2.207,0,5.882,1.552,9.442,1.856a6.064,6.064,0,0,0,5.249-1.856" transform="translate(-1.207 1.401) rotate(-3)"/>
+  </g>
+</svg>

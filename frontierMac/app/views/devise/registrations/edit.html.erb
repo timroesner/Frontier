@@ -1,7 +1,6 @@
 <body>
 <div class="header">
-<a class="nav" href="/">Home</a>
-<a class="nav" href="/search">Search</a>
+<a class="nav" href="/"><img class="imgnav" src="/assets/frontierAlt.svg"></a>
 <% if user_signed_in? %>
   <%= link_to('Profile', edit_user_registration_path, class: "active") %>
   <%= link_to 'List Car', new_car_path, class: "nav"%>

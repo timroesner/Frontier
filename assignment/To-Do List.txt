@@ -1,0 +1,12 @@
+To-Do List
+
+- Main page for mobile
+- Search page for mobile
+- Map center as variable
+- Style "Forgot Password" page
+- Adjust nav bar for mobile
+- return cars after search (ruby loop etc)
+- figure out search criteria (low priority)
+- Design and implement details page for car
+- maybe remove confirmable for test purposes..
+- Error should show if log in doesn't work 

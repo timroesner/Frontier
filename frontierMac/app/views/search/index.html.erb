@@ -2,13 +2,66 @@
 	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
     <style type="text/css">
-    	#map { position:absolute; top:0; bottom:0; width:100%; }
+    	#map { 
+    		position: fixed; 
+    		top:6em; 
+    		bottom:0; 
+    		right:1em; 
+    		width:30%; 
+    		height:60% }
+    	
+    	#cars{
+    		margin-top: 3.2em;
+    		width: 48%;
+    		right: 33%;
+    		position: absolute;
+    	}
+
+    	.title{
+    		text-align: left;
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		font-size: 42px;
+    		color: black;
+    	}
+    	.price{
+    		text-align: right;
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		margin-top: -60px;
+    		font-size: 42px;
+    		color: black;
+    	}
+    	.year{
+    		text-align: left;
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		margin-top: -20px;
+    		font-size: 32px;
+    		color: grey;
+    	}
+    	.perDay{
+    		text-align: right;
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		margin-top: -57px;
+    		font-size: 20px;
+    		color: grey;
+    	}
+    	.carIMG{
+    		width: 100%;
+    		margin-bottom: -25px;
+    		margin-top: 20px;
+    	}
+    	.sorry{
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		left: 5%;
+    		right: 5%;
+    		top: 5em;
+    		text-align: center;
+    		position: absolute;
+    	}
     </style>
 </head>
 <body>
 <div class="header">
-<a class="nav" href="/">Home</a>
-<a class="active" href="/search">Search</a>
+<a class="active" href="/"><img class="imgnavAct" src="/assets/frontierAlt.svg"></a>
 <% if user_signed_in? %>
 	<%= link_to('Profile', edit_user_registration_path, class: "nav") %>
 	<%= link_to 'List Car', new_car_path, class: "nav"%>
@@ -19,84 +72,27 @@
 <% end %>
 <hr class="header-line">
 </div>
-<div id='map'></div>
-
-<script>
-mapboxgl.accessToken = 'pk.eyJ1IjoidGltcm9lc25lciIsImEiOiJjajJhbzEzZ2QwMDkwMzNvZ2YxZnVsbXI2In0.Dq8bsIZh_GP75xpawX3fcA';
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10',
-    center: [-121.88171, 37.3359], // starting position
-    zoom: 13 // starting zoom
-});
-
-map.on('load', function() {
-    map.addLayer({
-        'id': "cars",
-        'type': "circle",
-        'source': {
-            "type": "geojson",
-            	"data": {
-                "type": "FeatureCollection",
-                "features": [{
-                 "type": "Feature",
-                 "properties": {},
-                 "geometry": {
-                 "coordinates": [
-                                 -122.045602,
-                                 37.340118
-                                 ],
-                 "type": "Point"
-                 },
-                 "id": "04a2d925f72c4a4f4ff05f11f085dc0c"
-                 },
-                 {
-                 "type": "Feature",
-                 "properties": {},
-                 "geometry": {
-                 "coordinates": [
-                                 -121.886473,
-                                 37.34421
-                                 ],
-                 "type": "Point"
-                 },
-                 "id": "0a83242b24e0a284221167abf8cf5b2e"
-                 },
-                 {
-                 "type": "Feature",
-                 "properties": {},
-                 "geometry": {
-                 "coordinates": [
-                                 -122.003573,
-                                 37.308815
-                                 ],
-                 "type": "Point"
-                 },
-                 "id": "0a9728317f29ac3a6fbf6ad187f226fc"
-                 },
-                {
-                    "type": "Feature",
-                    "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                                 -121.876386,
-                                 37.330684
-                                 ]
-
-                    },
-                    "properties": {}
-                }]
-            }	
-        },
-        'layout': {
-            'visibility': 'visible'
-        },
-        'paint': {
-            'circle-radius': 8,
-            'circle-color': 'rgba(0,123,255,1)'
-        },
-    });
-});
-</script>
+<% count = 0 %>
+<div id='cars'>
+    <% @cars.each do |car| %>
+    	<% if car.location.downcase == params[:location].downcase %>
+	    	<img class="carIMG" src="/assets/cars/<%= car.id %>.jpg"> 
+	    	<p class="title"><%= car.make %> <%= car.model %></p>
+	        <p class="price">$<%= car.price %></p>
+	        <p class="year"><%= car.year %></p>
+	        <p class="perDay">per Day</p>
+	        <% count = 1 %>
+	    <% end %>
+    <% end %>
+</div>
+<% if count == 0 %>
+	<div class="sorry">
+	<img width="10%" height="10%" src="/assets/frontier.svg">
+	<p>Sorry, but we couldn't find any cars in that area.</p>
+	</div>
+<% else %>
+	<div id='map'></div>
+<% end %>
+<script src="/assets/map.js"></script>
 </div>
 </body>
