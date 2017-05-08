@@ -91,6 +91,11 @@
 	<p>Sorry, but we couldn't find any cars in that area.</p>
 	</div>
 <% else %>
+	<% json = JSON.parse(open("https://maps.googleapis.com/maps/api/geocode/json?address="+params[:location]).read) %>
+	<% lat = json["results"].first["geometry"]["location"]["lat"]%>	
+	<% long = json["results"].first["geometry"]["location"]["lng"]%>	
+	<% File.open("./app/assets/javascripts/lat.txt", 'w') { |file| file.write(lat)} %>
+	<% File.open("./app/assets/javascripts/long.txt", 'w') { |file| file.write(long)} %>
 	<div id='map'></div>
 <% end %>
 <script src="/assets/map.js"></script>
