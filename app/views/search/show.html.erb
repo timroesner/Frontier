@@ -163,18 +163,69 @@
 	<hr>
 </div> 	
 
+<% if user_signed_in? %>
+	<% action = "/search/request" %>
+<% else %>
+	<% action = "/users/sign_up" %>
+<% end %>
+
 <div id="request">
-	<form action="/search/request" method="GET">
+	<form  action=<%= action %> method="GET">
 		<p class="request">Pick up</p>
-		<input type="date" name="date-pickup" class="datepicker" value="mm/dd/yyyy" />
+		<input type="date" name="date_pickup" class="datepicker" value="mm/dd/yyyy" />
 		<p class="request">Drop off</p>
-		<input type="date" name="date-dropoff" class="datepicker" value="mm/dd/yyyy" />
-		<input type="hidden" name="car" value=<%= car.price %>/>
+		<input type="date" name="date_dropoff" class="datepicker" value="mm/dd/yyyy" />
+		<input type="hidden" name="car" value="<%=car.make%> <%=car.model%>" />
 		<div class="actions">
     		<input type="submit" value="Request" />
  		</div>
  	</form>
 </div>
 
-<script src="/assets/map-details.js"></script>
+	<% json = JSON.parse(open("https://maps.googleapis.com/maps/api/geocode/json?address="+car.location).read) %>
+	<% lat = json["results"].first["geometry"]["location"]["lat"]%>	
+	<% long = json["results"].first["geometry"]["location"]["lng"]%>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidGltcm9lc25lciIsImEiOiJjajJhbzEzZ2QwMDkwMzNvZ2YxZnVsbXI2In0.Dq8bsIZh_GP75xpawX3fcA';
+   
+	var lat = <%= lat %>  
+	var long = <%= long %> 
+
+	var map = new mapboxgl.Map({
+	    container: 'map',
+	    style: 'mapbox://styles/mapbox/streets-v10',
+	    center: [long, lat], // starting position
+	    zoom: 13 // starting zoom
+	});
+
+	map.on('load', function() {
+	    map.addLayer({
+	        'id': "cars",
+	        'type': "circle",
+	        'source': {
+	            "type": "geojson",
+	            	"data": {
+	                "type": "FeatureCollection",
+	                "features": [{
+	                    "type": "Feature",
+	                    "geometry": {
+	                        "type": "Point",
+	                        "coordinates": [long, lat]
+
+	                    },
+	                    "properties": {}
+	                }]
+	            }	
+	        },
+	        'layout': {
+	            'visibility': 'visible'
+	        },
+	        'paint': {
+	            'circle-radius': 160,
+	            'circle-color': 'rgba(10,123,255,.5)'
+	        },
+	    });
+	});
+</script>
 </body>
