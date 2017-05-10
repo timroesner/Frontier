@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Custom_Size_1);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" class="cls-1">
+    <rect class="cls-3" width="50" height="50"/>
+    <path id="Path_2" data-name="Path 2" class="cls-2" d="M9.127,15.331,39.761,34.17,24.814,46.312V2.4l14.02,13.465L9.819,35.442"/>
+  </g>
+</svg>

@@ -76,11 +76,11 @@
 <div id='cars'>
     <% @cars.each do |car| %>
     	<% if car.location.downcase == params[:location].downcase %>
-	    	<img class="carIMG" src="/assets/cars/<%= car.id %>.jpg"> 
+	    	<a href="/search/show?car=<%= car.id %>"><img class="carIMG" src="/assets/cars/<%= car.id %>.jpg"></a>
 	    	<p class="title"><%= car.make %> <%= car.model %></p>
 	        <p class="price">$<%= car.price %></p>
 	        <p class="year"><%= car.year %></p>
-	        <p class="perDay">per Day</p>
+	        <p class="perDay">per day</p>
 	        <% count = 1 %>
 	    <% end %>
     <% end %>

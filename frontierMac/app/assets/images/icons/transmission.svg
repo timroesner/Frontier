@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Custom_Size_1);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" class="cls-1">
+    <rect class="cls-3" width="50" height="50"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(-2.995 -7.663)">
+      <line id="Line_1" data-name="Line 1" class="cls-2" y1="23.603" transform="translate(50.511 9.5)"/>
+      <line id="Line_2" data-name="Line 2" class="cls-2" y1="23.603" transform="translate(5.622 9.5)"/>
+      <line id="Line_3" data-name="Line 3" class="cls-2" y1="23.603" transform="translate(20.211 9.5)"/>
+      <line id="Line_4" data-name="Line 4" class="cls-2" y1="23.603" transform="translate(35.922 9.5)"/>
+      <line id="Line_5" data-name="Line 5" class="cls-2" y1="23.603" transform="translate(20.211 31.628)"/>
+      <line id="Line_6" data-name="Line 6" class="cls-2" y2="22.128" transform="translate(35.922 33.103)"/>
+      <line id="Line_7" data-name="Line 7" class="cls-2" x2="46.9" transform="translate(4.595 33.103)"/>
+    </g>
+  </g>
+</svg>

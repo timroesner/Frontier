@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Custom_Size_1);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 1.5px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-Custom_Size_1">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="Custom_Size_1" data-name="Custom Size – 1" class="cls-1">
+    <rect class="cls-3" width="50" height="50"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(-3.533 -5.171)">
+      <line id="Line_1" data-name="Line 1" class="cls-2" x2="30.903" transform="translate(14.389 17.153)"/>
+      <line id="Line_2" data-name="Line 2" class="cls-2" x1="16.07" y2="28.431" transform="translate(10.681 9.736)"/>
+      <line id="Line_3" data-name="Line 3" class="cls-2" x2="16.07" y2="27.195" transform="translate(10.681 23.333)"/>
+      <line id="Line_4" data-name="Line 4" class="cls-2" x2="30.903" transform="translate(14.389 43.111)"/>
+      <line id="Line_5" data-name="Line 5" class="cls-2" y1="27.195" x2="14.833" transform="translate(31.695 23.333)"/>
+      <line id="Line_6" data-name="Line 6" class="cls-2" x2="9.889" transform="translate(4.5 30.75)"/>
+      <line id="Line_7" data-name="Line 7" class="cls-2" x2="13.597" y2="28.431" transform="translate(32.931 9.736)"/>
+      <line id="Line_8" data-name="Line 8" class="cls-2" x2="9.889" transform="translate(42.82 30.75)"/>
+      <line id="Line_9" data-name="Line 9" class="cls-2" x1="6.181" y1="8.653" transform="translate(16.861 8.5)"/>
+      <line id="Line_10" data-name="Line 10" class="cls-2" y1="8.653" x2="6.181" transform="translate(36.639 8.5)"/>
+      <line id="Line_11" data-name="Line 11" class="cls-2" x1="4.944" y2="8.653" transform="translate(16.861 43.111)"/>
+      <line id="Line_12" data-name="Line 12" class="cls-2" x2="6.181" y2="8.653" transform="translate(36.639 43.111)"/>
+    </g>
+  </g>
+</svg>
