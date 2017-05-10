@@ -1,7 +1,24 @@
-# Frontier Car Rental
+# README
 
-This is a ruby on rails project created in Spring 2017 for a class at SJSU.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-It is an example project of a simple web application demonstarted with a car rental service. 
+Things you may want to cover:
 
-Screenshots to follow. 
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...

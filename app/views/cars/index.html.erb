@@ -2,14 +2,15 @@
 
 <h1>Cars</h1>
 
-<table class="table">
+<table>
   <thead>
     <tr>
-      <th>Licenseplate</th>
-      <th>Make</th>
       <th>Model</th>
-      <th>Category</th>
-      <th>Doors</th>
+      <th>Make</th>
+      <th>Door</th>
+      <th>Year</th>
+      <th>Price</th>
+      <th>Location</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +18,12 @@
   <tbody>
     <% @cars.each do |car| %>
       <tr>
-        <td><%= car.licenseplate %></td>
-        <td><%= car.make %></td>
         <td><%= car.model %></td>
-        <td><%= car.category %></td>
-        <td><%= car.doors %></td>
+        <td><%= car.make %></td>
+        <td><%= car.door %></td>
+        <td><%= car.year %></td>
+        <td><%= car.price %></td>
+        <td><%= car.location %></td>
         <td><%= link_to 'Show', car %></td>
         <td><%= link_to 'Edit', edit_car_path(car) %></td>
         <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>

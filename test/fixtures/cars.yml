@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  licenseplate: MyString
-  make: MyString
   model: MyString
-  category: MyString
-  doors: MyString
+  make: MyString
+  door: MyString
+  year: MyString
+  price: MyString
+  location: MyString
 
 two:
-  licenseplate: MyString
-  make: MyString
   model: MyString
-  category: MyString
-  doors: MyString
+  make: MyString
+  door: MyString
+  year: MyString
+  price: MyString
+  location: MyString

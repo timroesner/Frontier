@@ -1,3 +1,4 @@
+<div class="layout">
 <%= form_for(car) do |f| %>
   <% if car.errors.any? %>
     <div id="error_explanation">
@@ -12,11 +13,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :licenseplate %>
-    <%= f.text_field :licenseplate %>
-  </div>
-
-  <div class="field">
     <%= f.label :make %>
     <%= f.text_field :make %>
   </div>
@@ -27,16 +23,27 @@
   </div>
 
   <div class="field">
-    <%= f.label :category %>
-    <%= f.text_field :category %>
+    <%= f.label :door %>
+    <%= f.text_field :door %>
   </div>
 
   <div class="field">
-    <%= f.label :doors %>
-    <%= f.text_field :doors %>
+    <%= f.label :year %>
+    <%= f.text_field :year %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price, "Price (in $)" %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
   </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

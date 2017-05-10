@@ -1,25 +1,103 @@
 <head>
-  <link href="application.scss" type="text/css" />
-  <style>
-    img.search{
-      margin-top: 3em;
-      margin-left: 0px;
-      margin-right: 0px;
-      z-index: 0;
-      position: relative;
-      width: 100%;
-    }
-  </style>
-</head>
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
+    <style type="text/css">
+    	#map { 
+    		position: fixed; 
+    		top:6em; 
+    		bottom:0; 
+    		right:1em; 
+    		width:30%; 
+    		height:60% }
+    	
+    	#cars{
+    		margin-top: 3.2em;
+    		width: 48%;
+    		right: 33%;
+    		position: absolute;
+    	}
 
+    	.title{
+    		text-align: left;
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		font-size: 42px;
+    		color: black;
+    	}
+    	.price{
+    		text-align: right;
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		margin-top: -60px;
+    		font-size: 42px;
+    		color: black;
+    	}
+    	.year{
+    		text-align: left;
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		margin-top: -20px;
+    		font-size: 32px;
+    		color: grey;
+    	}
+    	.perDay{
+    		text-align: right;
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		margin-top: -57px;
+    		font-size: 20px;
+    		color: grey;
+    	}
+    	.carIMG{
+    		width: 100%;
+    		margin-bottom: -25px;
+    		margin-top: 20px;
+    	}
+    	.sorry{
+    		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+    		left: 5%;
+    		right: 5%;
+    		top: 5em;
+    		text-align: center;
+    		position: absolute;
+    	}
+    </style>
+</head>
 <body>
 <div class="header">
-<a class="nav" href="/">Home</a>
-<a class="active" href="/search">Search</a>
-<a class="nav" href="/users/new">Register</a>
-<a class="nav" href="/cars/new">List your Car</a>
+<a class="active" href="/"><img class="imgnavAct" src="/assets/frontierAlt.svg"></a>
+<% if user_signed_in? %>
+	<%= link_to('Profile', edit_user_registration_path, class: "nav") %>
+	<%= link_to 'List Car', new_car_path, class: "nav"%>
+	<%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "nav") %>      
+<% else %>
+	<%= link_to('Register', new_user_registration_path, class: "nav") %>
+	<%= link_to('Log In', new_user_session_path, class: "nav")%> 
+<% end %>
 <hr class="header-line">
 </div>
-<img class="search" src="/assets/search.jpg" alt="Search">
+<% count = 0 %>
+<div id='cars'>
+    <% @cars.each do |car| %>
+    	<% if car.location.downcase == params[:location].downcase %>
+	    	<a href="/search/show?car=<%= car.id %>"><img class="carIMG" src="/assets/cars/<%= car.id %>.jpg"></a>
+	    	<p class="title"><%= car.make %> <%= car.model %></p>
+	        <p class="price">$<%= car.price %></p>
+	        <p class="year"><%= car.year %></p>
+	        <p class="perDay">per day</p>
+	        <% count = 1 %>
+	    <% end %>
+    <% end %>
+</div>
+<% if count == 0 %>
+	<div class="sorry">
+	<img width="10%" height="10%" src="/assets/frontier.svg">
+	<p>Sorry, but we couldn't find any cars in that area.</p>
+	</div>
+<% else %>
+	<% json = JSON.parse(open("https://maps.googleapis.com/maps/api/geocode/json?address="+params[:location]).read) %>
+	<% lat = json["results"].first["geometry"]["location"]["lat"]%>	
+	<% long = json["results"].first["geometry"]["location"]["lng"]%>	
+	<% File.open("./app/assets/javascripts/lat.txt", 'w') { |file| file.write(lat)} %>
+	<% File.open("./app/assets/javascripts/long.txt", 'w') { |file| file.write(long)} %>
+	<div id='map'></div>
+<% end %>
+<script src="/assets/map.js"></script>
 </div>
 </body>
