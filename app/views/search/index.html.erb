@@ -49,6 +49,15 @@
     		margin-bottom: -25px;
     		margin-top: 20px;
     	}
+
+      .filters {
+        position: fixed;
+        left: 1%;
+        top: 4em;
+        height: 100%;
+        width: 15%;
+      }
+
     	.sorry{
     		font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
     		left: 5%;
@@ -96,6 +105,11 @@
 	<% long = json["results"].first["geometry"]["location"]["lng"]%>
 	<div id='map'></div>
 <% end %>
+
+<div class="filters">
+  <img src="/assets/filters.svg" width="100%">
+</div>
+
 <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoidGltcm9lc25lciIsImEiOiJjajJhbzEzZ2QwMDkwMzNvZ2YxZnVsbXI2In0.Dq8bsIZh_GP75xpawX3fcA';
 
