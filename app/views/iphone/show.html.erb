@@ -1,0 +1,230 @@
+<head>
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
+  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  	<script>
+  	$( function() {
+   	 $( ".datepicker" ).datepicker();
+  	} );
+  </script>
+
+	<style type="text/css">
+	        
+		#map { 
+    		position: absolute; 
+    		margin-top: 102%;  
+    		left: 2%; 
+    		width: 50%; 
+    		padding-bottom: 70%; }
+    		
+		.carIMG { width: 100%; overflow: hidden; margin-top: -75px;}
+
+		#car {  
+			position: absolute;
+			margin-top: 3.3em;
+			width: 100%;
+			height: 0px;
+			padding-bottom: 35%;
+    		overflow: hidden;
+    	 }
+
+    	 #details {  
+			position: absolute;
+			margin-top: 45%;
+			left: 2%;
+			width: 96%;
+    	 }
+
+    	 #icon {  
+    	 	margin-left: 3%;
+    	 	margin-right: 3%;
+    	 	display: inline-block;
+    	 	width: 15.5%;
+    	 }
+
+    	 #banner {  
+    	 	text-align: center;
+  			width: 100%;
+    	 }
+
+    	 #request {  
+			right: 5%;
+			position: absolute;
+			margin-top: 108%;
+			width: 37%;
+			text-align: left;
+    	 }
+
+    	 p.icon {
+    	 	margin-top: -1%;
+    	 	margin-bottom: -2%;
+    	 	text-align: center;
+    	 	font-size: 14px;
+    	 }
+
+    	 p.request {
+    	 	font-size: 16px;
+    	 	margin-bottom: 2px;
+    	 	margin-top: 0px;
+    	 }
+
+    	 .title { font-size: 34px; }
+
+    	 .price { 
+    	 	font-size: 22px;
+    	 	margin-top: -10px;
+    	 	text-align: left; 
+    	 }
+
+    	 .actions input{
+ 			padding-bottom: 8px;
+ 		   	padding-top: 8px;
+    		margin-top: 5px;
+    		margin-bottom: 20px;
+    		width: 100%;
+    		font-size: 125%;
+    		color: white;
+    		font-family: avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+      		background-color: #0A60FF;
+      		border: none;
+            -webkit-appearance: none;
+            border-radius: 7px;
+		}
+
+    	 input[type=date] {
+			padding-left: 20px;
+			padding-bottom: 5px;
+			padding-right: 20px;
+			padding-top: 5px;
+			margin-left: 0;
+			margin-bottom: 15px;
+			margin-right: 0;
+			margin-top: 5px;
+			width: 100%;
+			font-size: 100%;
+			font-family: avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+	    	display: inline-block;
+	    	border: 2px solid #ccc;
+	    	border-radius: 5px;
+	    	box-sizing: border-box;
+	    	position: relative;
+	    	z-index: 1;  	
+		}
+
+	</style>
+</head>
+<body>
+<div class="header">
+<a class="active" href="/"><img class="imgnavAct" src="/assets/frontierAlt.svg"></a>
+<% if user_signed_in? %>
+	<%= link_to('Profile', edit_user_registration_path, class: "nav") %>
+	<%= link_to 'List Car', new_car_path, class: "nav"%>
+	<%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "nav") %>      
+<% else %>
+	<%= link_to('Register', new_user_registration_path, class: "nav") %>
+	<%= link_to('Log In', new_user_session_path, class: "nav")%> 
+<% end %>
+<hr class="header-line">
+</div>
+<% car = @cars.find(params[:car]) %>
+<div id='car'>
+	<img class="carIMG" src="/assets/cars/<%= car.id %>.jpg">
+</div>		
+<div id="details">
+	<p class="title"><%= car.make %> <%= car.model %>&nbsp;&nbsp;<span style="color: grey"><%= car.year %></span></p>
+	<p class="price">$<%= car.price %> per day</p>
+	<hr>
+	<div id="banner">
+		<div id="icon">
+			<img width="70%" src="/assets/icons/door.svg"/>
+			<p class="icon"><%= car.door %> doors</p>
+		</div>
+
+		<div id="icon">
+			<img width="70%" src="/assets/icons/transmission.svg"/>
+			<p class="icon">automatic</p>
+		</div>
+
+		<div id="icon">
+			<img width="70%" src="/assets/icons/ac.svg"/>
+			<p class="icon">A/C</p>
+		</div>
+
+		<div id="icon">
+			<img width="70%" src="/assets/icons/bluetooth.svg"/>
+			<p class="icon">Bluetooth</p>
+		</div>
+	</div>
+	<hr>
+</div> 	
+<div id='map'></div>
+
+<% if user_signed_in? %>
+	<% action = "/iphone/request" %>
+<% else %>
+	<% action = "/users/sign_up" %>
+<% end %>
+
+<div id="request">
+	<form  action=<%= action %> method="GET">
+		<p class="request">Pick up</p>
+		<input type="date" name="date_pickup" class="datepicker" value="mm/dd/yyyy" />
+		<p class="request">Drop off</p>
+		<input type="date" name="date_dropoff" class="datepicker" value="mm/dd/yyyy" />
+		<input type="hidden" name="car" value="<%=car.make%> <%=car.model%>" />
+		<div class="actions">
+    		<input type="submit" value="Request" />
+ 		</div>
+ 	</form>
+</div>
+
+	<% json = JSON.parse(open("https://maps.googleapis.com/maps/api/geocode/json?address="+car.location).read) %>
+	<% lat = json["results"].first["geometry"]["location"]["lat"]%>	
+	<% long = json["results"].first["geometry"]["location"]["lng"]%>
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoidGltcm9lc25lciIsImEiOiJjajJhbzEzZ2QwMDkwMzNvZ2YxZnVsbXI2In0.Dq8bsIZh_GP75xpawX3fcA';
+   
+	var lat = <%= lat %>  
+	var long = <%= long %> 
+
+	var map = new mapboxgl.Map({
+	    container: 'map',
+	    style: 'mapbox://styles/mapbox/streets-v10',
+	    center: [long, lat], // starting position
+	    zoom: 12 // starting zoom
+	});
+
+	map.on('load', function() {
+	    map.addLayer({
+	        'id': "cars",
+	        'type': "circle",
+	        'source': {
+	            "type": "geojson",
+	            	"data": {
+	                "type": "FeatureCollection",
+	                "features": [{
+	                    "type": "Feature",
+	                    "geometry": {
+	                        "type": "Point",
+	                        "coordinates": [long, lat]
+
+	                    },
+	                    "properties": {}
+	                }]
+	            }	
+	        },
+	        'layout': {
+	            'visibility': 'visible'
+	        },
+	        'paint': {
+	            'circle-radius': 80,
+	            'circle-color': 'rgba(10,123,255,.5)'
+	        },
+	    });
+	});
+</script>
+</body>

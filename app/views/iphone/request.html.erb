@@ -1,0 +1,47 @@
+<head>
+	<style type="text/css">
+		textarea {
+			width: 100%;
+			font-family: avenir, "Lucida Grande", Verdana, Arial, sans-serif;
+			margin: 8px 0;
+			padding: 12px 20px;
+			font-size: 100%;
+			border: 1px solid #ccc;
+	    	border-radius: 5px;
+	    	box-sizing: border-box;
+		}
+		.layout-iphone{
+   		 padding-top: 6em;
+   		 margin: auto;
+    	 width: 90%;
+    	 z-index: 0;
+  		}
+	</style>
+</head>
+<body>
+<div class="header">
+<a class="active" href="/"><img class="imgnavAct" src="/assets/frontierAlt.svg"></a>
+<% if user_signed_in? %>
+	<%= link_to('Profile', edit_user_registration_path, class: "nav") %>
+	<%= link_to 'List Car', new_car_path, class: "nav"%>
+	<%= link_to('Log Out', destroy_user_session_path, :method => :delete, class: "nav") %>      
+<% else %>
+	<%= link_to('Register', new_user_registration_path, class: "nav") %>
+	<%= link_to('Log In', new_user_session_path, class: "nav")%> 
+<% end %>
+<hr class="header-line">
+</div>
+<div class="layout-iphone">
+	<p align="center" style="font-size:25px; line-height: 32px;">Request <%= params[:car] %> from <%= params[:date_pickup] %> to <%= params[:date_dropoff] %> </p>
+	<br>
+	<p align="left" style="font-size:20px;">Add message to owner:</p>
+	<form action="https://formspree.io/<%= current_user.email %>" method="POST">
+    	<textarea name="Message" rows="8" cols="20" id="Message"></textarea>
+    	<input type="hidden" name="from" value="<%= params[:date_pickup] %>" />
+    	<input type="hidden" name="to" value="<%= params[:date_dropoff] %>" />
+    	<div class="actions">
+    		<input type="submit" value="Send Request" />
+ 		</div>
+ 	</form>
+</div>
+</body>

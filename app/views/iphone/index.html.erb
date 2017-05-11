@@ -5,24 +5,33 @@
 
 img.hero {
 	margin-top: 2%;
-	margin-left: 0px;
-	margin-right: 0px;
+	margin-left: -70%;
 	z-index: 0;
 	position: relative;
+	width: 1066px;
+	height: 800px;
+}
+
+.hero {
+	position: absolute;
+	z-index: 0;
+	height: 0px;
 	width: 100%;
+	padding-bottom: 177.5%;
+	overflow: hidden;
 }
 
 input[type=text] {
 		padding-left: 20px;
-		padding-bottom: 5px;
+		padding-bottom: 10px;
 		padding-right: 20px;
-		padding-top: 5px;
+		padding-top: 10px;
 		margin-left: 0;
 		margin-bottom: 27px;
 		margin-right: 0;
 		margin-top: 5px;
-		width: 50%;
-		font-size: 100%;
+		width: 80%;
+		font-size: 110%;
 		font-family: avenir, "Lucida Grande", Verdana, Arial, sans-serif;
     	display: inline-block;
     	border: 2px solid #ccc;
@@ -33,14 +42,18 @@ input[type=text] {
     	
 }
 
- h1{
+ .text{
     font-size: 56px;
+    text-align: center;
     font-family: Avenir, "Lucida Grande", Verdana, Arial, sans-serif;
-    line-height: 40px;
-    margin-top: -55%;
-    position: relative;
+    line-height: 60px;
     color: white; 
-    text-shadow: 2px 2px 8px grey;
+    text-shadow: 2px 2px 8px black;
+  }
+
+  .wrapper {
+  	margin-top: 4em;
+    position: absolute;
     z-index: 1;
   }
 
@@ -48,8 +61,8 @@ input[type=text] {
 </style>
 <script type="text/javascript">
     $(window).on('load resize',function(){
-        if($(window).width() < 700){
-            window.location = "/iphone"
+        if($(window).width() > 800){
+            window.location = "/"
         }
     });
 </script>
@@ -68,13 +81,15 @@ input[type=text] {
 <% end %>
 <hr class="header-line">
 </div>
-<img class="hero" src="/assets/hero.jpg" alt="Hero">
-<h1 align="center">Where are you going next?</h1>
+<div class="hero">
+	<img class="hero" src="/assets/hero.jpg" alt="Hero">	
+</div>
 <div class="wrapper">
-<form action="/search">
-<input type="text" name="location" placeholder="Destination, city, address" autocomplete="off" id="search-location" value="">
-<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
-</form>
+	<h1 class="text">Where are you going next?</h1>
+	<form action="/iphone/search">
+		<input type="text" name="location" placeholder="Destination, city, address" autocomplete="off" id="search-location" value="">
+		<input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+	</form>
 </div>
 </body>
 
