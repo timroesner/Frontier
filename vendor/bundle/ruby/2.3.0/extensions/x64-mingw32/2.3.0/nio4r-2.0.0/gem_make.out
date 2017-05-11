@@ -1,0 +1,3 @@
+current directory: C:/Users/Kyle/Dropbox/Frontier/vendor/bundle/ruby/2.3.0/gems/nio4r-2.0.0/ext/nio4r
+C:/Ruby23-x64/bin/ruby.exe -r ./siteconf20170510-5816-1wuvi67.rb extconf.rb 
+undefined method `success?' for nil:NilClass

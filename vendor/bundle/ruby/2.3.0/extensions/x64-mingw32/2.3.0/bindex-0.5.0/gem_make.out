@@ -1,0 +1,16 @@
+current directory: C:/Users/Kyle/Dropbox/Frontier/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+C:/Ruby23-x64/bin/ruby.exe -r ./siteconf20170510-5816-154oefx.rb extconf.rb 
+creating Makefile
+
+current directory: C:/Users/Kyle/Dropbox/Frontier/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: C:/Users/Kyle/Dropbox/Frontier/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+generating cruby-x64-mingw32.def
+compiling cruby.c
+linking shared-object bindex/cruby.so
+
+current directory: C:/Users/Kyle/Dropbox/Frontier/vendor/bundle/ruby/2.3.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20170510-5816-rt0b1v/bindex

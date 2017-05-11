@@ -1,13 +1,5 @@
 To-Do List
 
-- (Checked)Main page for mobile (adjusted the "where are you going" size when using small device)
-- background picture for mobile
-- Search page for mobile
-- Map center as variable
 - Style "Forgot Password" page
-- (Checked)Adjust nav bar for mobile (nav bar now is responsive for mobile)
-- return cars after search (ruby loop etc)
 - figure out search criteria (low priority)
-- Design and implement details page for car
-- maybe remove confirmable for test purposes..
 - Error should show if log in doesn't work 

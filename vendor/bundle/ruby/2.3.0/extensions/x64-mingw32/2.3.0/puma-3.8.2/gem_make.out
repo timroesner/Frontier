@@ -1,0 +1,25 @@
+current directory: C:/Users/Kyle/Dropbox/Frontier/vendor/bundle/ruby/2.3.0/gems/puma-3.8.2/ext/puma_http11
+C:/Ruby23-x64/bin/ruby.exe -r ./siteconf20170510-5816-x1uiqi.rb extconf.rb 
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+creating Makefile
+
+current directory: C:/Users/Kyle/Dropbox/Frontier/vendor/bundle/ruby/2.3.0/gems/puma-3.8.2/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: C:/Users/Kyle/Dropbox/Frontier/vendor/bundle/ruby/2.3.0/gems/puma-3.8.2/ext/puma_http11
+make "DESTDIR="
+generating puma_http11-x64-mingw32.def
+compiling http11_parser.c
+ext/puma_http11/http11_parser.rl: In function 'puma_parser_execute':
+ext/puma_http11/http11_parser.rl:111:3: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+compiling io_buffer.c
+compiling mini_ssl.c
+mini_ssl.c: In function 'Init_mini_ssl':
+mini_ssl.c:450:14: warning: unused variable 'eng' [-Wunused-variable]
+compiling puma_http11.c
+linking shared-object puma/puma_http11.so
+
+current directory: C:/Users/Kyle/Dropbox/Frontier/vendor/bundle/ruby/2.3.0/gems/puma-3.8.2/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20170510-5816-131d1yb/puma
